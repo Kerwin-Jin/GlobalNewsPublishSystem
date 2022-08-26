@@ -1,0 +1,50 @@
+.modelCardWrap{
+	border: 1px solid #DDE2F0;
+	border-radius: 5px;
+	position:relative;
+	display: flex;
+	width: 324px;
+	padding: 5px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+    .photoSticker{
+        width: 120px;
+        height: 160px;
+        border: 1px solid #eee;
+        position: relative;
+
+        img{
+            object-fit:cover;
+            width: 120px;
+            height: 160px;
+        }
+
+        .checkBox{
+            z-index: 5;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+    }
+
+    .modelInfo{
+        margin-left: 10px;
+        flex: 1;
+        position: relative;
+
+        div{
+            font-size: 12px;
+        }
+
+        .more{
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        .infoTitle{
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+}

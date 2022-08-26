@@ -1,11 +1,12 @@
 import React from "react";
-import "./App.css";
-import Test from "./test";
-
+import "./App.less";
+import "@arco-design/web-react/dist/css/arco.css";
+import { Calendar } from "@arco-design/web-react";
+import Management from "./pages/management";
 function App() {
   return (
-    <div className="App">
-      <Test />
+    <div>
+      <Management />
     </div>
   );
 }
