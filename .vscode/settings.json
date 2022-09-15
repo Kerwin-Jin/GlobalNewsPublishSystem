@@ -1,0 +1,9 @@
+{
+    "editor.tabSize": 2,
+    "editor.insertSpaces": false,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.rulers": [
+        80,120
+    ],
+    "editor.formatOnSave": true
+}

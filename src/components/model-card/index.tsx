@@ -1,11 +1,13 @@
-import { Checkbox, Image, Link } from "@arco-design/web-react";
-import React from "react";
+// import { Checkbox, Image, Link } from "@arco-design/web-react";
+import React, { useState, useEffect } from "react";
 
 // import style from "./index.module.css";
-import { IconSearch } from "@arco-design/web-react/icon";
+// import { IconSearch } from "@arco-design/web-react/icon";
 import { IModel } from "../../data";
 import style from "./index.module.less";
-
+import TerminateImg from "../../assets/ternimate.svg";
+import MaleImg from "../../assets/male.svg";
+import FemaleImg from "../../assets/female.svg";
 export type TResult = {
   code: number;
   value: boolean;
@@ -13,32 +15,52 @@ export type TResult = {
 
 interface ModelCardProps {
   modelInfo: IModel;
+  selectedList: any;
   onSelect: (result: TResult) => void;
 }
 const ModelCard: React.FC<ModelCardProps> = (props) => {
-  const { modelInfo, onSelect } = props;
-  const { name, code, sex, height } = modelInfo;
+  const { modelInfo, onSelect, selectedList } = props;
+  const { name, code, sex, height, termination, picture } = modelInfo;
 
   const handleChange = (value: boolean) => {
     onSelect && onSelect({ code, value });
   };
 
+  // useEffect(() => {
+
+  // }, [check]);
+
   const handleJump = () => {
     // todo:跳转
+    console.log("跳转->" + code);
   };
   return (
     <div className={style.modelCardWrap}>
       <div className={style.photoSticker}>
         <div className={style.checkBox}>
-          <Checkbox onChange={handleChange} />
+          {/* <Checkbox
+            onChange={handleChange}
+            checked={selectedList.find((item: any) => item.code === code)}
+          /> */}
         </div>
-        <div>
-          <Image src="https://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/a8c8cdb109cb051163646151a4a5083b.png~tplv-uwbnlip3yd-webp.webp" />
-        </div>
+        {termination ? (
+          <div className={style.mask}>
+            <img src={TerminateImg} alt="" />
+          </div>
+        ) : null}
+        <div>{/* <Image src={picture} /> */}</div>
       </div>
       <div className={style.modelInfo}>
         <div className={style.more} onClick={handleJump}>
-          <Link hoverable={false} icon={<IconSearch />} />
+          {/* <Link
+            hoverable={false}
+            icon={
+              <img
+                src={sex === 1 ? MaleImg : FemaleImg}
+                alt={sex === 1 ? "男" : "女"}
+              />
+            }
+          /> */}
         </div>
         <div className={style.infoTitle}>{name}</div>
         <div>模特编码: {code}</div>

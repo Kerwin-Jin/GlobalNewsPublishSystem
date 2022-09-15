@@ -1,8 +1,10 @@
 export interface IModel {
   code: number;
   name: string;
-  sex: string;
+  sex: number;
   height: number;
+  termination?: boolean;
+  picture?: string;
 }
 export interface IStateTree {
   id: string;
@@ -622,33 +624,46 @@ export const modelList: Array<IModel> = [
   {
     code: 1001,
     name: "Ariana Grande",
-    sex: "女",
+    sex: 1,
     height: 1780,
+    termination: true,
+    picture:
+      "https://p-boei18n.byted.org/tos-boei18n-i-kbzp8evlda/d524fa2a7bbb4819868f71598dc6315b~tplv-kbzp8evlda-origin-webp.webp",
   },
   {
     code: 1002,
     name: "Nana",
-    sex: "女",
+    sex: 1,
     height: 1880,
+    termination: true,
+    picture:
+      "https://p-boei18n.byted.org/tos-boei18n-i-kbzp8evlda/d524fa2a7bbb4819868f71598dc6315b~tplv-kbzp8evlda-origin-webp.webp",
   },
   {
     code: 1003,
     name: "Julier",
-    sex: "女",
+    sex: 2,
     height: 1683,
+    picture:
+      "https://p-boei18n.byted.org/tos-boei18n-i-kbzp8evlda/d524fa2a7bbb4819868f71598dc6315b~tplv-kbzp8evlda-origin-webp.webp",
   },
 
   {
     code: 1004,
     name: "Crystal",
-    sex: "女",
+    sex: 2,
     height: 1724,
+    termination: true,
+    picture:
+      "https://p-boei18n.byted.org/tos-boei18n-i-kbzp8evlda/d524fa2a7bbb4819868f71598dc6315b~tplv-kbzp8evlda-origin-webp.webp",
   },
 
   {
     code: 1005,
     name: "Seline",
-    sex: "女",
+    sex: 1,
     height: 1802,
+    picture:
+      "https://p-boei18n.byted.org/tos-boei18n-i-kbzp8evlda/d524fa2a7bbb4819868f71598dc6315b~tplv-kbzp8evlda-origin-webp.webp",
   },
 ];
