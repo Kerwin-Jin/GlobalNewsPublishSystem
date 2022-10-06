@@ -1,22 +1,21 @@
-import React, { CSSProperties } from "react";
+import React from "react";
 import { Button } from "antd";
-import style from "./index.module.less";
+import axios from "axios";
 interface HomeProps {
   type?: string;
 }
 
-const style1: CSSProperties = {
-  margin: "10px",
-  width: 100,
-  height: 100,
-  boxShadow: "4px 4px 16px #eee",
-  padding: "10px",
-};
-
 const Home: React.FC<HomeProps> = (props) => {
+  const getNews = () => {
+    axios
+      .get("http://localhost:3004/rights")
+      .then((res) => console.log(res.data));
+  };
   return (
     <div>
-      <div style={style1}>首页</div>
+      <Button type="dashed" onClick={getNews}>
+        获取
+      </Button>
     </div>
   );
 };
