@@ -24,11 +24,12 @@ const SandBox: React.FC<SandBoxProps> = (props) => {
             margin: "24px 16px",
             padding: 24,
             minHeight: 280,
+            overflow: "auto",
           }}
         >
           <Switch>
             <Route path="/home" component={Home} />
-            <Route path="/right-manager/list" component={RightManager} />
+            <Route path="/right-manage/right/list" component={RightManager} />
             <Redirect from="/" to={"/home"} exact />
             <Route path="*" component={NotFound} />
           </Switch>

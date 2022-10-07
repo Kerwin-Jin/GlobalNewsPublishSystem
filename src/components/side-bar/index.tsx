@@ -50,7 +50,6 @@ const SideBar: React.FC<SideBarProps> = (props) => {
       });
     };
     const res = await axios.get("http://localhost:3004/rights?_embed=children");
-    console.log("%c 🥚 res", "color:#6ec1c2", res);
 
     const _menu = res.data.map((item: any) => {
       if (item.children.length) {
@@ -66,7 +65,7 @@ const SideBar: React.FC<SideBarProps> = (props) => {
           };
         }
       } else {
-        console.log(item.pagepermisson);
+        // console.log(item.pagepermisson);
         if (item.pagepermisson) {
           return {
             key: item.key,
@@ -85,7 +84,6 @@ const SideBar: React.FC<SideBarProps> = (props) => {
     return [history.location.pathname];
   };
   const defaultOpenKeys = () => {
-    console.log("%c 🍏 pathname", "color:#4fff4B", history.location.pathname);
     return ["/" + history.location.pathname.split("/")[1]];
   };
 
